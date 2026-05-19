@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GREEN LEAF | Cart & Checkout</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <nav class="left-links" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="brand-center-inline">Green Leaf</div>
+      <a class="cart-chip" href="cart.html">🛒 Cart <span id="cartCount">0</span></a>
+    </div>
+  </header>
+
+  <main class="container cart-shell" id="cartPage">
+    <section class="card cart-panel">
+      <h2 class="section-title">Your Cart</h2>
+      <div id="cartRows"></div>
+      <div class="totals-box">
+        <div class="summary-line"><span>Items Total:</span><strong id="itemsTotal">Rs. 0</strong></div>
+        <div class="summary-line"><span>Delivery Charge:</span><strong id="deliveryCharge">Rs. 0</strong></div>
+        <div class="summary-line grand"><span>Grand Total:</span><strong id="grandTotal">Rs. 0</strong></div>
+      </div>
+    </section>
+
+    <section class="card order-panel">
+      <h2 class="section-title">Order Form</h2>
+      <div class="form-grid">
+        <div><label>Full Name</label><input id="fullName" /></div>
+        <div><label>Phone Number</label><input id="phone" maxlength="10" /></div>
+        <div><label>Address</label><textarea id="address" rows="3"></textarea></div>
+        <div><label>Pincode</label><input id="pincode" maxlength="6" /></div>
+      </div>
+
+      <fieldset class="payment-fieldset payment-unique">
+        <legend>Payment Option</legend>
+        <label class="pay-chip"><input type="radio" name="payMode" value="UPI" checked /><span>UPI</span></label>
+        <label class="pay-chip"><input type="radio" name="payMode" value="Razorpay" /><span>Razorpay (Online)</span></label>
+        <label class="pay-chip"><input type="radio" name="payMode" value="COD" /><span>Cash on Delivery</span></label>
+      </fieldset>
+
+      <div class="upi-box" id="upiblock">
+        <p><strong>UPI ID:</strong> Rohithpirate@iob</p>
+        <p><strong>Pay Amount:</strong> <span id="upiAmount">Rs. 0</span></p>
+        <input type="hidden" id="upiAmountHidden" value="0" />
+        <div class="cta-row">
+          <button id="payUpi" class="btn btn-primary small-btn">Pay with UPI App</button>
+          <button id="copyUpi" class="btn btn-primary small-btn">Copy UPI ID</button>
+          <button id="downloadQr" class="btn btn-primary small-btn">Download QR</button>
+        </div>
+        <div class="qr"><img src="assets/payments/upi-qr.jpeg" alt="UPI QR" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" /></div>
+        <p class="upi-note">If UPI app does not open, scan this QR with any UPI app.</p>
+      </div>
+
+      <div class="upi-box hidden" id="razorpayBox">
+        <p><strong>Razorpay (Online)</strong></p>
+        <button id="razorBtn" class="btn btn-soft small-btn">Pay with Razorpay</button>
+        <p class="subtle">Secure checkout with UPI/Card/Netbanking.</p>
+      </div>
+
+      <div class="action-space">
+        <button id="amountPaidBtn" class="btn btn-primary" disabled>Amount Paid</button>
+        <button id="placeOrderBtn" class="btn btn-primary" disabled>Place Order</button>
+        <button id="printReceiptBtn" class="btn btn-soft" disabled>Print Receipt</button>
+      </div>
+
+      <p id="statusMsg" class="msg"></p>
+    </section>
+  </main>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="razorpay-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
