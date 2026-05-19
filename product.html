@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GREEN LEAF | Product</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav nav-split">
+      <nav class="left-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+      <div class="brand brand-center-inline">Green Leaf</div>
+      <a class="cart-chip link-clean" href="cart.html">🛒 Cart <span id="cartCount">0</span></a>
+    </div>
+  </header>
+
+  <main class="container" id="productPage">
+    <section class="product-layout">
+      <div id="pImage" class="product-image">Milk Soap</div>
+      <article class="card">
+        <h1 id="pName">Milk Soap</h1>
+        <p id="pDesc" class="subtle"></p>
+        <p id="pPrice" class="price"></p>
+
+        <div class="qty" style="margin:12px 0;">
+          <button id="qtyMinus">-</button>
+          <strong id="qtyVal">1</strong>
+          <button id="qtyPlus">+</button>
+        </div>
+
+        <button id="addProductCart" class="btn btn-primary">Add to Cart</button>
+        <p id="productMsg" class="msg"></p>
+        <p><a href="cart.html" class="btn btn-soft">Go to Cart</a></p>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
